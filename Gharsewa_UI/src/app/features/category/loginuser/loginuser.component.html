@@ -1,0 +1,22 @@
+
+<div class="wrapper">
+  <div class="center">
+    <h1>Welcome to <span style="color:#2691d9 ;">GharSewa</span></h1>
+    <form #form="ngForm" (ngSubmit)="onFormSubmit()">
+      <div class="txt_field">
+        <input type="text" name="username" [(ngModel)]="model.UserName" required />
+        <span></span>
+        <label>Username</label>
+      </div>
+      <div class="txt_field">
+        <input type="password" name="password" [(ngModel)]="model.PassWord" required />
+        <span></span>
+        <label>Password</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+      <div class="signup_link">Not a user? <a [routerLink]="['/user/register']">Register</a></div>
+    </form>
+  </div>
+</div>
+
+  

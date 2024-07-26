@@ -1,0 +1,28 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(user.userId)" >
+    <div class="form-group">
+        <label for="username">UserName</label>
+        <input type="text" class="form-control" name="username" [(ngModel)]="model.userName">
+      </div>
+
+      <div class="form-group">
+        <label for="fullname">Full Name</label>
+        <input type="text" class="form-control" name="fullname" [(ngModel)]="model.fullName">
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" class="form-control" name="address" [(ngModel)]="model.address">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" name="email" [(ngModel)]="model.email">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" class="form-control" name="phone" [(ngModel)]="model.phone">
+      </div>
+
+    <button type="submit" class="btn btn-primary">Book</button>
+  </form>

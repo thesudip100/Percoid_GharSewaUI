@@ -1,0 +1,38 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form #form="ngForm" (ngSubmit)="onFormSubmit()">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" placeholder="Enter your name" name="fullname" [(ngModel)]="model.FullName" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" placeholder="Enter your username" name="username" [(ngModel)]="model.UserName" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" placeholder="Enter your password" name="password" [(ngModel)]="model.Password"
+              required>
+          </div>
+          <div class="input-box">
+            <span class="details">Address</span>
+            <input type="text" placeholder="Enter your Address" name="address" [(ngModel)]="model.Address" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" placeholder="Enter your email" name="email" [(ngModel)]="model.Email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter your number" name="phone" [(ngModel)]="model.Phone" required>
+          </div>
+        </div>
+        <button type="submit">Register</button>
+      </form>
+      <div class="signup_link">Already have an account? <a [routerLink]="['']">Login Now</a></div>
+    </div>
+  </div>
+</div>

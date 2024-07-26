@@ -1,0 +1,31 @@
+<div class="dashboard">
+  <input type="checkbox" id="menu-toggle">
+  <div class="sidebar">
+    <div class="logo">
+      <img src="" alt="Logo">
+    </div>
+    <button class="sidebar-btn">Dashboard</button>
+    <button *ngIf="service.isUser()"class="sidebar-btn" [routerLink]="['/user/dashboard/book-service']">Book a Service</button>
+    <button class="sidebar-btn" [routerLink]="['/user/dashboard/view-booking']">View Bookings</button>
+    <button  class="sidebar-btn" (click)="DeleteUser(user?.userId)">Delete Account</button>
+    <button class="sidebar-btn">Change Password</button>
+  </div>
+  <div class="main-content">
+    <div class="header">
+      <label for="menu-toggle" class="hamburger">&#9776;</label>
+      <div class="welcome">Welcome, <span id="username">{{user?.username}}</span></div>
+      <div class="profile-dropdown">
+        <button class="profile-btn">Profile</button>
+        <div class="dropdown-content">
+          <button class="btn btn-primary" [routerLink]="['/user/dashboard/edit-profile']">Edit Profile</button>
+          <button class="btn btn-primary" (click)="onLogout()">Logout</button>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+
