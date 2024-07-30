@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { bookserviceModel, editProfileModel, userLoginModel } from '../models/userLoginModel';
+import { bookserviceModel, changePasswordModel, editProfileModel, userLoginModel } from '../models/userLoginModel';
 import { userRegistrationModel } from '../models/userRegistrationModel';
 import { jwtDecode } from 'jwt-decode';
 import { tokenModel } from '../models/tokenModel';
@@ -35,12 +35,23 @@ export class GharSewaService {
   
   deleteAccount(id:number):Observable<any>
   {
-    return this.http.get<any>(`https://localhost:7086/api/User/DeleteUser/${id}`)
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization', `bearer ${token}`);
+    return this.http.get<any>(`https://localhost:7086/api/User/DeleteUser/${id}`,{headers})
   }
 
   getBookings(id:number):Observable<any>
   {
-    return this.http.get<any>(`https://localhost:7086/api/Booking/GetBookingsbyUserId/${id}`)
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization', `bearer ${token}`);
+    return this.http.get<any>(`https://localhost:7086/api/Booking/GetBookingsbyUserId/${id}`,{headers})
+  }
+
+  getAllBookings():Observable<any>
+  {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization', `bearer ${token}`);
+    return this.http.get<any>('https://localhost:7086/api/Booking/getAllBookings',{headers})
   }
 
   editProfile(model:editProfileModel,id:number):Observable<any>
@@ -48,6 +59,13 @@ export class GharSewaService {
     const token = this.getToken();
     const headers = new HttpHeaders().set('Authorization', `bearer ${token}`);
     return this.http.put<any>(`https://localhost:7086/api/User/EditUserProfile/${id}`,model,{headers})
+  }
+
+  changePassword(model:changePasswordModel,id:number):Observable<any>
+  {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization', `bearer ${token}`);
+    return this.http.put<any>(`https://localhost:7086/api/User/ChangePassword/${id}`,model,{headers})
   }
 
   getUserbyId(id:number):Observable<any>

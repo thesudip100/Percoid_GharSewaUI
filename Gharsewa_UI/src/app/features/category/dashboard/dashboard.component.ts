@@ -27,20 +27,23 @@ export class DashboardComponent {
   }
 
   
-    DeleteUser(id: number | undefined) {
-      if (id !== undefined) {
+  DeleteUser(id: number | undefined) {
+    if (id !== undefined) {
+      const confirmation = window.confirm('Are you sure you want to delete this user? This action cannot be undone.');
+      if (confirmation) {
         this.service.deleteAccount(id).subscribe({
-          next:(response)=>
-          {
-            alert(response.message)
+          next: (response) => {
+            alert(response.message);
           }
         });
         this.service.deleteToken();
         this.route.navigate(['']);
-      } else {
-        console.error('User ID is undefined. Cannot delete user.');
       }
+    } else {
+      console.error('User ID is undefined. Cannot delete user.');
     }
+  }
+  
     
   
 }

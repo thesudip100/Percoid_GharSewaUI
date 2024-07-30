@@ -15,3 +15,18 @@ export interface editProfileModel {
     email: string,
     phone: string
 }
+
+export interface changePasswordModel {
+    oldpassword:string,
+    newpassword:string
+}
+
+export interface viewAllBookingsModel
+{
+    fullName:string,
+    address: string,
+    phone: string,
+    serviceName: string,
+    bookingDate: string,
+    bookingId:number
+}

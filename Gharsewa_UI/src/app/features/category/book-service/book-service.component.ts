@@ -14,6 +14,7 @@ import { GharSewaService } from '../services/ghar-sewa.service';
 })
 export class BookServiceComponent {
  model:bookserviceModel
+ minDateTime: string = new Date().toISOString();
 
  constructor(private gharsewaservice:GharSewaService){
    this.model={

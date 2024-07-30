@@ -1,10 +1,12 @@
 import { Routes } from '@angular/router';
 import { BookServiceComponent } from './features/category/book-service/book-service.component';
 import { BookingViewComponent } from './features/category/booking-view/booking-view.component';
+import { ChangePasswordComponent } from './features/category/change-password/change-password.component';
 import { DashboardComponent } from './features/category/dashboard/dashboard.component';
 import { EditProfileComponent } from './features/category/edit-profile/edit-profile.component';
 import { LoginuserComponent } from './features/category/loginuser/loginuser.component';
 import { RegisterUserComponent } from './features/category/register-user/register-user.component';
+import { ViewAllBookingsComponent } from './features/category/view-all-bookings/view-all-bookings.component';
 
 
 export const routes: Routes = [
@@ -33,6 +35,16 @@ export const routes: Routes = [
         {
           path: 'edit-profile',
           component: EditProfileComponent
+        },
+
+        {
+          path: 'change-password',
+          component: ChangePasswordComponent
+        },
+
+        {
+          path: 'all-bookings',
+          component: ViewAllBookingsComponent
         }
 
       ]
