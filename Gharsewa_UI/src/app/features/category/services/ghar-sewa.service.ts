@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { bookserviceModel, changePasswordModel, editProfileModel, userLoginModel } from '../models/userLoginModel';
+import { bookserviceModel, changePasswordModel, editProfileModel, feedbackModel, userLoginModel } from '../models/userLoginModel';
 import { userRegistrationModel } from '../models/userRegistrationModel';
 import { jwtDecode } from 'jwt-decode';
 import { tokenModel } from '../models/tokenModel';
@@ -71,6 +71,29 @@ export class GharSewaService {
   getUserbyId(id:number):Observable<any>
   {
     return this.http.get<any>(`https://localhost:7086/api/User/GetSingleUser/${id}`)
+  }
+
+  deleteBooking(id:number):Observable<any>
+  {
+    return this.http.delete<any>(`https://localhost:7086/api/Booking/DeleteBookingDetails/${id}`)
+  }
+
+  addfeedback(model:feedbackModel):Observable<any>
+  {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization', `bearer ${token}`);
+    return this.http.post<any>('https://localhost:7086/api/Feedback/AddFeedbacks',model, {headers});
+  }
+
+
+  getAllFeedbacks():Observable<any>
+  {
+    return this.http.get<any>('https://localhost:7086/api/Feedback/GetAllFeedbacks')
+  }
+
+  deleteFeedback(id:number):Observable<any>
+  {
+    return this.http.delete<any>(`https://localhost:7086/api/Feedback/DeleteFeedbacks/${id}`)
   }
 
   setToken(token: string) {

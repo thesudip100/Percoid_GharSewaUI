@@ -30,3 +30,11 @@ export interface viewAllBookingsModel
     bookingDate: string,
     bookingId:number
 }
+
+export interface feedbackModel{
+    id:number,
+    userId:number,
+    feedbackby:string,
+    feedbackfor:string,
+    message:string
+}

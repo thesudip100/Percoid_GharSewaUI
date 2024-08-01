@@ -20,15 +20,7 @@
           <td>{{ booking.phone }}</td>
           <td>{{ booking.serviceName}}</td>
           <td>{{ booking.bookingDate }}</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <!-- <td>
-            <a class="btn btn-primary" [routerLink]="['/admin/employees/update', booking.bookingId]">Update</a>
-          </td>
-        <td>
-            <button class="btn btn-danger" [routerLink]="['/admin/employees/update', booking.bookingId]">Delete</button>
-        </td> -->
+          <td><button class="btn btn-danger" (click)="Delete(booking.bookingId)">Delete</button></td>      
         </tr>
       </tbody>
     </table>

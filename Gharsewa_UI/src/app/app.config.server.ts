@@ -7,5 +7,9 @@ const serverConfig: ApplicationConfig = {
     provideServerRendering()
   ]
 };
+export const environment = {
+  production: false,
+  ignoreSSL: true
+};
 
 export const config = mergeApplicationConfig(appConfig, serverConfig);

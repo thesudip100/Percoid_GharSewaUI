@@ -1,11 +1,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
-.dashboard {
-    display: flex;
-    height: 100vh;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
-}
+
+    .dashboard {
+        display: flex;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    }
+
 
 /* Hide the menu-toggle checkbox */
 #menu-toggle {

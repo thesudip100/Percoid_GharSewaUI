@@ -11,6 +11,8 @@
     <button *ngIf="service.isUser()" class="sidebar-btn" (click)="DeleteUser(user?.userId)">Delete Account</button>
     <button *ngIf="service.isUser()" class="sidebar-btn" [routerLink]="['/user/dashboard/change-password']">Change Password</button>
     <button *ngIf="service.isAdmin()" class="sidebar-btn" [routerLink]="['/user/dashboard/all-bookings']">All Bookings</button>
+    <button *ngIf="service.isUser()" class="sidebar-btn" [routerLink]="['/user/dashboard/add-feedbacks']">Add Feedbacks</button>
+    <button *ngIf="service.isAdmin()" class="sidebar-btn" [routerLink]="['/user/dashboard/view-feedbacks']">View Feedbacks</button>
   </div>
   <div class="main-content">
     <div class="main-content">

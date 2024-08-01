@@ -21,7 +21,7 @@ export class BookServiceComponent {
      serviceName:"",
      bookingDate:""
    }
- }
+ }                                             
 
  onSubmit()
  {

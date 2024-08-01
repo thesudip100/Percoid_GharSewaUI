@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AddFeedbackComponent } from './features/category/add-feedback/add-feedback.component';
 import { BookServiceComponent } from './features/category/book-service/book-service.component';
 import { BookingViewComponent } from './features/category/booking-view/booking-view.component';
 import { ChangePasswordComponent } from './features/category/change-password/change-password.component';
@@ -7,6 +8,7 @@ import { EditProfileComponent } from './features/category/edit-profile/edit-prof
 import { LoginuserComponent } from './features/category/loginuser/loginuser.component';
 import { RegisterUserComponent } from './features/category/register-user/register-user.component';
 import { ViewAllBookingsComponent } from './features/category/view-all-bookings/view-all-bookings.component';
+import { ViewFeedbacksComponent } from './features/category/view-feedbacks/view-feedbacks.component';
 
 
 export const routes: Routes = [
@@ -45,6 +47,15 @@ export const routes: Routes = [
         {
           path: 'all-bookings',
           component: ViewAllBookingsComponent
+        },
+        {
+          path: 'add-feedbacks',
+          component: AddFeedbackComponent
+        },
+
+        {
+          path: 'view-feedbacks',
+          component: ViewFeedbacksComponent
         }
 
       ]
