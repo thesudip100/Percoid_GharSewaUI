@@ -1,0 +1,10 @@
+<h1 class="typing-animation">Extend your <span style="color: blue;">GharSewa</span> Service</h1>
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <div class="form-group">
+        <label for="servicename">Service Name</label>
+        <input type="text" class="form-control" id="servicename" name="service_name"  [(ngModel)]="model.categoryname" required>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Add Service</button>
+</form>
+

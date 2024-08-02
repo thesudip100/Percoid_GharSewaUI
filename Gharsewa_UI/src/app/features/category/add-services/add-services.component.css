@@ -1,0 +1,18 @@
+.typing-animation {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.15em solid orange; /* Adjust the color as needed */
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    margin-bottom: 20px; /* Adjust the spacing as needed */
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 56%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: orange; /* Adjust the color as needed */ }
+}

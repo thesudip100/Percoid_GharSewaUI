@@ -37,7 +37,6 @@ export class EditProfileComponent {
       this.gharSewaService.getUserbyId(this.user?.userId).subscribe({
         next:(data:editProfileModel)=>{
           this.model=data;
-          console.log(this.model,data)
         }
       })}
     }

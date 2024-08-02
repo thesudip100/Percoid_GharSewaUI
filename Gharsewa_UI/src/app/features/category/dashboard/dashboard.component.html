@@ -2,7 +2,7 @@
   <input type="checkbox" id="menu-toggle">
   <div class="sidebar">
     <div class="logo">
-      <img src="" alt="Logo">
+      <img src="assets/images/logo.png" alt="Logo">
     </div>
     <button *ngIf="service.isUser()" class="sidebar-btn">User Dashboard</button>
     <button *ngIf="service.isAdmin()" class="sidebar-btn">Admin Dashboard</button>
@@ -13,6 +13,7 @@
     <button *ngIf="service.isAdmin()" class="sidebar-btn" [routerLink]="['/user/dashboard/all-bookings']">All Bookings</button>
     <button *ngIf="service.isUser()" class="sidebar-btn" [routerLink]="['/user/dashboard/add-feedbacks']">Add Feedbacks</button>
     <button *ngIf="service.isAdmin()" class="sidebar-btn" [routerLink]="['/user/dashboard/view-feedbacks']">View Feedbacks</button>
+    <button *ngIf="service.isAdmin()" class="sidebar-btn" [routerLink]="['/user/dashboard/add-services']">Add Services</button>
   </div>
   <div class="main-content">
     <div class="main-content">
@@ -24,6 +25,7 @@
               <button class="profile-btn">Profile</button>
               <div class="dropdown-content">
                   <button *ngIf="service.isUser()" class="btn btn-primary" [routerLink]="['/user/dashboard/edit-profile']">Edit Profile</button>
+                  <button *ngIf="service.isUser()" class="btn btn-primary" [routerLink]="['/user/dashboard/view-profile']">View Profile</button>
                   <button class="btn btn-primary" (click)="onLogout()">Logout</button>
               </div>
           </div>

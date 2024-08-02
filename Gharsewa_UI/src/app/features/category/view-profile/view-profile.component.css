@@ -1,0 +1,73 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.profile-card {
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.profile-header {
+    background: linear-gradient(to right, #76aeee, #4174c0);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px 8px 0 0;
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.profile-name {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+.profile-details {
+    padding: 20px;
+}
+
+.profile-detail-item {
+    margin-bottom: 20px;
+}
+
+.profile-detail-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #4a90e2;
+    padding-bottom: 5px;
+}
+
+.profile-details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center; /* Center content horizontally within grid cells */
+}
+
+.profile-detail {
+    text-align: center; /* Center text within each profile detail block */
+}
+
+.profile-label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.profile-value {
+    color: #555;
+    margin: 0;
+}
+

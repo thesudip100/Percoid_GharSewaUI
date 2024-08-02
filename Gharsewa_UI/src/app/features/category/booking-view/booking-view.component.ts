@@ -1,22 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { GharSewaService } from '../services/ghar-sewa.service';
-import { bookserviceModel } from '../models/userLoginModel';
+import { bookserviceModel, viewAllBookingsModel } from '../models/userLoginModel';
 import { tokenModel } from '../models/tokenModel';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-booking-view',
   standalone: true,
-  imports: [RouterModule,CommonModule],
+  imports: [RouterModule, CommonModule, ToastrModule],
   templateUrl: './booking-view.component.html',
   styleUrls: ['./booking-view.component.css']
 })
 export class BookingViewComponent {
-  bookings: bookserviceModel[] = [];
+  bookings: viewAllBookingsModel[] = [];
   user: tokenModel | null = null;
 
-  constructor(private gharSewaService: GharSewaService) {
+  constructor(private gharSewaService: GharSewaService, private toastr: ToastrService) {
     this.onload();
   }
 
@@ -29,7 +30,7 @@ export class BookingViewComponent {
 
   loadBookings(id: number): void {
     this.gharSewaService.getBookings(id).subscribe({
-      next: (data: bookserviceModel[]) => {
+      next: (data: viewAllBookingsModel[]) => {
         this.bookings = data;
       },
       error: (err) => {
@@ -37,5 +38,19 @@ export class BookingViewComponent {
       }
     });
   }
+
+  Delete(id: number,): void {
+    const userId = this.user.userId;
+    const confirmation = window.confirm('Are you sure you want to delete this booking?');
+    if (confirmation) {
+      this.gharSewaService.deleteBooking(id).subscribe({
+        next: (response) => {
+          this.toastr.success(response.message);
+          this.loadBookings(userId)
+        }
+      })
+    }
+  }
 }
+
 

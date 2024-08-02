@@ -38,3 +38,7 @@ export interface feedbackModel{
     feedbackfor:string,
     message:string
 }
+
+export interface addServicesModel{
+    categoryname:string
+}

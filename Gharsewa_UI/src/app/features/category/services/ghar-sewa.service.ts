@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { bookserviceModel, changePasswordModel, editProfileModel, feedbackModel, userLoginModel } from '../models/userLoginModel';
+import { addServicesModel, bookserviceModel, changePasswordModel, editProfileModel, feedbackModel, userLoginModel, viewAllBookingsModel } from '../models/userLoginModel';
 import { userRegistrationModel } from '../models/userRegistrationModel';
 import { jwtDecode } from 'jwt-decode';
 import { tokenModel } from '../models/tokenModel';
@@ -94,6 +94,21 @@ export class GharSewaService {
   deleteFeedback(id:number):Observable<any>
   {
     return this.http.delete<any>(`https://localhost:7086/api/Feedback/DeleteFeedbacks/${id}`)
+  }
+
+  addService(model:addServicesModel):Observable<any>
+  {
+    return this.http.post<any>('https://localhost:7086/api/Category/AddCategory',model);
+  }
+
+  getallcategory():Observable<addServicesModel[]>
+  {
+    return this.http.get<addServicesModel[]>('https://localhost:7086/api/Category/GetAllCategories');
+  }
+
+  updateBookings(model:viewAllBookingsModel,id:number):Observable<any>
+  {
+    return this.http.put<any>(`https://localhost:7086/api/Booking/UpdateBookingDetails/${id}`,model)
   }
 
   setToken(token: string) {

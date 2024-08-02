@@ -5,12 +5,16 @@
       <tr>
         <th scope="col">Service Booked</th>
         <th scope="col">Booking Date</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let booking of bookings">
         <td>{{ booking.serviceName }}</td>
         <td>{{ booking.bookingDate }}</td>
+        <td><button class="btn btn-danger" [routerLink]="['/user/dashboard/update-booking', booking.bookingId]">Update</button>
+          <button class="btn btn-danger" (click)="Delete(booking.bookingId)">Delete</button>
+        </td>
       </tr>
     </tbody>
   </table>

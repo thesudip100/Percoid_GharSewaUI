@@ -1,9 +1,8 @@
-<h1>Book Our Service</h1>
-
-<form #form="ngForm" (ngSubmit)="onSubmit()">
+<h1>Update Booking</h1>
+<form #form="ngForm" (ngSubmit)="onSubmit()" >
   <div class="form-group">
     <label for="servicename">Service Name</label>
-    <select class="form-control" name="servicename" [(ngModel)]="model.serviceName">
+    <select class="form-control" name="servicename" [(ngModel)]="model.serviceName" >
       <option *ngFor="let category of categories">{{category.categoryname}}</option>
 
     </select>
@@ -14,4 +13,3 @@
   </div>
   <button type="submit" class="btn btn-primary">Book</button>
 </form>
-
