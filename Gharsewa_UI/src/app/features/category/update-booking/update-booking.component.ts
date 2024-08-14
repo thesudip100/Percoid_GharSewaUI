@@ -29,7 +29,8 @@ export class UpdateBookingComponent {
       phone: '',
       serviceName: '',
       bookingDate: '',
-      bookingId:NaN
+      bookingId:NaN,
+      bookingApproval:false
     }
     this.bookingId = Number(this.route.snapshot.paramMap.get('bookingId'));
     this.onload()

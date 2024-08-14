@@ -8,6 +8,7 @@ import { DashboardComponent } from './features/category/dashboard/dashboard.comp
 import { EditProfileComponent } from './features/category/edit-profile/edit-profile.component';
 import { LoginuserComponent } from './features/category/loginuser/loginuser.component';
 import { RegisterUserComponent } from './features/category/register-user/register-user.component';
+import { UnapprovedBookingsComponent } from './features/category/unapproved-bookings/unapproved-bookings.component';
 import { UpdateBookingComponent } from './features/category/update-booking/update-booking.component';
 import { ViewAllBookingsComponent } from './features/category/view-all-bookings/view-all-bookings.component';
 import { ViewFeedbacksComponent } from './features/category/view-feedbacks/view-feedbacks.component';
@@ -74,7 +75,11 @@ export const routes: Routes = [
         {
           path:'update-booking/:bookingId',
           component:UpdateBookingComponent
-        }
+        }, 
+        {
+          path:'unapproved-bookings',
+          component:UnapprovedBookingsComponent
+        }, 
 
       ]
     }

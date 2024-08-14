@@ -14,6 +14,7 @@
     <button *ngIf="service.isUser()" class="sidebar-btn" [routerLink]="['/user/dashboard/add-feedbacks']">Add Feedbacks</button>
     <button *ngIf="service.isAdmin()" class="sidebar-btn" [routerLink]="['/user/dashboard/view-feedbacks']">View Feedbacks</button>
     <button *ngIf="service.isAdmin()" class="sidebar-btn" [routerLink]="['/user/dashboard/add-services']">Add Services</button>
+    <button *ngIf="service.isAdmin()" class="sidebar-btn" [routerLink]="['/user/dashboard/unapproved-bookings']">Unapproved Bookings</button>
   </div>
   <div class="main-content">
     <div class="main-content">

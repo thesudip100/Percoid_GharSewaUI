@@ -28,7 +28,8 @@ export interface viewAllBookingsModel
     phone: string,
     serviceName: string,
     bookingDate: string,
-    bookingId:number
+    bookingId:number,
+    bookingApproval:boolean
 }
 
 export interface feedbackModel{

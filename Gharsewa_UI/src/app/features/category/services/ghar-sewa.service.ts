@@ -53,6 +53,19 @@ export class GharSewaService {
     const headers = new HttpHeaders().set('Authorization', `bearer ${token}`);
     return this.http.get<any>('https://localhost:7086/api/Booking/getAllBookings',{headers})
   }
+  getUnapprovedBookings():Observable<any>
+  {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization', `bearer ${token}`);
+    return this.http.get<any>('https://localhost:7086/api/Booking/GetUnapprovedBookings',{headers})
+  }
+
+  approveBookings(id:number):Observable<any>
+  {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization', `bearer ${token}`);
+    return this.http.get<any>(`https://localhost:7086/api/Booking/ApproveBookings/${id}`,{headers})
+  }
 
   editProfile(model:editProfileModel,id:number):Observable<any>
   {

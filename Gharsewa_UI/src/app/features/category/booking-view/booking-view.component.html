@@ -6,6 +6,7 @@
         <th scope="col">Service Booked</th>
         <th scope="col">Booking Date</th>
         <th scope="col">Action</th>
+        <th scope="col">Status</th>
       </tr>
     </thead>
     <tbody>
@@ -15,6 +16,12 @@
         <td><button class="btn btn-danger" [routerLink]="['/user/dashboard/update-booking', booking.bookingId]">Update</button>
           <button class="btn btn-danger" (click)="Delete(booking.bookingId)">Delete</button>
         </td>
+        <td>
+          <button *ngIf="booking.bookingApproval" class="btn btn-success" disabled>Confirmed </button>
+          <button *ngIf="!booking.bookingApproval" class="btn btn-info" disabled>Pending</button>
+        </td>
+        
+        
       </tr>
     </tbody>
   </table>

@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mt-3">
+      <h1>Unapproved Bookings List</h1>
+    </div>
+  
+    <table class="table mt-3">
+      <thead style="color: blue;">
+        <tr>
+          <th scope="col">Full Name</th>
+          <th scope="col">Address</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Service Booked</th>
+          <th scope="col">Booking Date</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of bookings">
+          <td>{{ booking.fullName }}</td>
+          <td>{{ booking.address }}</td>
+          <td>{{ booking.phone }}</td>
+          <td>{{ booking.serviceName }}</td>
+          <td>{{ booking.bookingDate }}</td>
+          <td><button class="btn btn-success" (click)="onApprove(booking.bookingId)">Approve</button></td>      
+        </tr>
+      </tbody>
+    </table>
+  </div>
