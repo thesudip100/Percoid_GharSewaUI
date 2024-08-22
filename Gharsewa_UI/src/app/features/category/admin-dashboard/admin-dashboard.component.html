@@ -1,0 +1,28 @@
+<div *ngIf="gharSewaService.isAdmin()" class="dashboard-card-container">
+    <!-- Existing cards -->
+    <div class="dashboard-card">
+        <h2 class="dashboard-card-title">Total Approved Bookings</h2>
+        <p class="dashboard-card-number">{{stats.approvedBookingsCount}}</p>
+    </div>
+    <div class="dashboard-card">
+        <h2 class="dashboard-card-title">Total Offered Services</h2>
+        <p class="dashboard-card-number">{{stats.categoryCount}}</p>
+    </div>
+    <div class="dashboard-card">
+        <h2 class="dashboard-card-title">Total Unapproved Bookings</h2>
+        <p class="dashboard-card-number">{{stats.unapprovedBookingsCount}}</p>
+    </div>
+</div>
+
+<!-- New section -->
+<h2 class="dashboard-section-title">Services Available</h2>
+<div  class="dashboard-card-container">
+    <div class="dashboard-card" *ngFor="let category of categories">
+        <h2 class="dashboard-card-title">{{category.categoryname}}</h2>
+        <p class="dashboard-card-number"></p>
+    </div>
+   
+</div>
+
+
+

@@ -47,6 +47,11 @@ export class GharSewaService {
     return this.http.get<any>(`https://localhost:7086/api/Booking/GetBookingsbyUserId/${id}`,{headers})
   }
 
+  getStats():Observable<any>
+  {
+    return this.http.get<any>('https://localhost:7086/api/Booking/getAdminStats')
+  }
+
   getAllBookings():Observable<any>
   {
     const token = this.getToken();

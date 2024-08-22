@@ -4,8 +4,8 @@
     <div class="logo">
       <img src="assets/images/logo.png" alt="Logo">
     </div>
-    <button *ngIf="service.isUser()" class="sidebar-btn">User Dashboard</button>
-    <button *ngIf="service.isAdmin()" class="sidebar-btn">Admin Dashboard</button>
+    <button *ngIf="service.isUser()" class="sidebar-btn" [routerLink]="['/user/dashboard/']">User Dashboard</button>
+    <button *ngIf="service.isAdmin()" class="sidebar-btn"  [routerLink]="['/user/dashboard/']">Admin Dashboard</button>
     <button *ngIf="service.isUser()" class="sidebar-btn" [routerLink]="['/user/dashboard/book-service']">Book a Service</button>
     <button *ngIf="service.isUser()" class="sidebar-btn" [routerLink]="['/user/dashboard/view-booking']">View Bookings</button>
     <button *ngIf="service.isUser()" class="sidebar-btn" (click)="DeleteUser(user?.userId)">Delete Account</button>

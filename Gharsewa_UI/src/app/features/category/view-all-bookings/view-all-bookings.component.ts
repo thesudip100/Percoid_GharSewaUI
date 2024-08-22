@@ -52,15 +52,5 @@ export class ViewAllBookingsComponent {
     }
   }
 
-  showUnapprovedPosts(){
-    this.gharSewaService.getUnapprovedBookings().subscribe({
-      next: (data: viewAllBookingsModel[]) => {
-        this.bookings = data;
-      },
-      error: (err) => {
-        console.error('Error fetching bookings:', err);
-      }
-    });
-  }
   
 }

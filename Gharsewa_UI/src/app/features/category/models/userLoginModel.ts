@@ -43,3 +43,9 @@ export interface feedbackModel{
 export interface addServicesModel{
     categoryname:string
 }
+
+export interface AdminStats{
+    approvedBookingsCount: number,
+    unapprovedBookingsCount:number,
+    categoryCount:number
+}

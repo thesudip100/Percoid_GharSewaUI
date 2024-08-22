@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { AddFeedbackComponent } from './features/category/add-feedback/add-feedback.component';
 import { AddServicesComponent } from './features/category/add-services/add-services.component';
+import { AdminDashboardComponent } from './features/category/admin-dashboard/admin-dashboard.component';
 import { BookServiceComponent } from './features/category/book-service/book-service.component';
 import { BookingViewComponent } from './features/category/booking-view/booking-view.component';
 import { ChangePasswordComponent } from './features/category/change-password/change-password.component';
@@ -80,6 +81,10 @@ export const routes: Routes = [
           path:'unapproved-bookings',
           component:UnapprovedBookingsComponent
         }, 
+        {
+          path:'',
+          component:AdminDashboardComponent
+        }
 
       ]
     }
