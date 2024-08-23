@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { addServicesModel, bookserviceModel } from '../models/userLoginModel';
@@ -18,7 +18,7 @@ export class BookServiceComponent {
   categories: addServicesModel[] = [];
   minDateTime: string = new Date().toISOString();
 
-  constructor(private gharsewaservice: GharSewaService, private toastr:ToastrService, private router:Router) {
+  constructor(private gharsewaservice: GharSewaService, private toastr: ToastrService, private router: Router) {
     this.model = {
       serviceName: "",
       bookingDate: ""
@@ -31,9 +31,15 @@ export class BookServiceComponent {
         this.categories = data;
       }
     });
+
   }
 
-  onSubmit() {
+
+  onSubmit(form: NgForm) {
+    if (form.invalid) {
+      form.control.markAllAsTouched();
+      return;
+    }
     const confirmation = window.confirm('Do you want to book this service?');
     if (confirmation) {
       this.gharsewaservice.bookService(this.model).subscribe({
@@ -45,3 +51,4 @@ export class BookServiceComponent {
     }
   }
 }
+

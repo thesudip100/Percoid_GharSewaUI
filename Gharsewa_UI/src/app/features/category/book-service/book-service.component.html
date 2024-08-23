@@ -1,17 +1,25 @@
 <h1>Book Our Service</h1>
 
-<form #form="ngForm" (ngSubmit)="onSubmit()">
+<form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate>
   <div class="form-group">
     <label for="servicename">Service Name</label>
-    <select class="form-control" name="servicename" [(ngModel)]="model.serviceName">
+    <select class="form-control" name="servicename" [(ngModel)]="model.serviceName" required>
+      <option value="" disabled selected>Select a service</option>
       <option *ngFor="let category of categories">{{category.categoryname}}</option>
-
     </select>
+    <div *ngIf="form.submitted && !model.serviceName" class="text-danger">
+      Service Name is required.
+    </div>
   </div>
+  
   <div class="form-group">
     <label for="bookingdate">Booking Date</label>
     <input type="datetime-local" class="form-control" name="bookingdate" [(ngModel)]="model.bookingDate" [min]="minDateTime | date:'yyyy-MM-ddTHH:mm'" required>
+    <div *ngIf="form.submitted && !model.bookingDate" class="text-danger">
+      Booking Date is required.
+    </div>
   </div>
+  
   <button type="submit" class="btn btn-primary">Book</button>
 </form>
 

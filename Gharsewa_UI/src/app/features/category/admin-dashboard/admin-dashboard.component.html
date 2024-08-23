@@ -16,13 +16,10 @@
 
 <!-- New section -->
 <h2 class="dashboard-section-title">Services Available</h2>
-<div  class="dashboard-card-container">
-    <div class="dashboard-card" *ngFor="let category of categories">
-        <h2 class="dashboard-card-title">{{category.categoryname}}</h2>
-        <p class="dashboard-card-number"></p>
-    </div>
-   
+<div class="dashboard-card-container">
+        <button class="dashboard-card" *ngFor="let category of categories" (click)="navigateToBookingService()">
+            <h2 class="dashboard-card-title">{{category.categoryname}}</h2>
+            <p class="dashboard-card-number"></p>
+        </button>
 </div>
-
-
 

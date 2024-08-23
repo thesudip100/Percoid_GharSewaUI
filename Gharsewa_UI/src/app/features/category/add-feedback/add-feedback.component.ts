@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { tokenModel } from '../models/tokenModel';
 import { feedbackModel } from '../models/userLoginModel';
 import { GharSewaService } from '../services/ghar-sewa.service';
@@ -38,8 +38,13 @@ export class AddFeedbackComponent {
     }
   }   
 
-  onSubmit()
+
+onSubmit(form: NgForm)
  {
+  if (form.invalid) {
+    form.control.markAllAsTouched();
+    return;
+  }
    this.gharsewaservice.addfeedback(this.model).subscribe({
      next:(response)=>{   
        alert(response.message);

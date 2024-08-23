@@ -13,16 +13,16 @@
       <tr *ngFor="let booking of bookings">
         <td>{{ booking.serviceName }}</td>
         <td>{{ booking.bookingDate }}</td>
-        <td><button class="btn btn-danger" [routerLink]="['/user/dashboard/update-booking', booking.bookingId]">Update</button>
-          <button class="btn btn-danger" (click)="Delete(booking.bookingId)">Delete</button>
+        <td class="action-buttons">
+          <button class="btn btn-danger update-btn" [routerLink]="['/user/dashboard/update-booking', booking.bookingId]">Update</button>
+          <button class="btn btn-danger delete-btn" (click)="Delete(booking.bookingId)">Delete</button>
         </td>
         <td>
-          <button *ngIf="booking.bookingApproval" class="btn btn-success" disabled>Confirmed </button>
+          <button *ngIf="booking.bookingApproval" class="btn btn-success" disabled>Confirmed</button>
           <button *ngIf="!booking.bookingApproval" class="btn btn-info" disabled>Pending</button>
         </td>
-        
-        
       </tr>
     </tbody>
   </table>
 </div>
+
